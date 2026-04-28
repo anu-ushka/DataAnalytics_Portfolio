@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anushka | Data Analytics Portfolio</title>
+    <title>Anushka Tyagi (anu-ushka)</title>
 
     <style>
         :root {
@@ -23,74 +23,82 @@
         }
 
         body {
-            background: var(--bg);
+            background-color: var(--bg);
             color: var(--text);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
 
         a {
-            color: var(--accent);
             text-decoration: none;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(180deg, #0d1117, #161b22);
-        }
-
-        .hero h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            color: var(--muted);
-            margin-bottom: 20px;
-        }
-
-        .hero-btn {
-            background: var(--accent);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 6px;
+            color: var(--accent);
         }
 
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 20px;
+            padding: 24px;
         }
 
+        /* SIDEBAR */
+        .sidebar {
+            margin-bottom: 40px;
+        }
+
+        .avatar {
+            width: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .username {
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .bio {
+            margin-bottom: 10px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
         .section-title {
-            font-size: 22px;
-            margin: 40px 0 20px;
+            font-size: 20px;
+            margin-bottom: 20px;
         }
 
         .repo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
 
         .repo-card {
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
-            transition: 0.3s;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         .repo-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             border-color: var(--accent);
-            box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
         }
 
         .repo-card img {
             width: 100%;
-            height: 180px;
+            height: 160px;
             object-fit: cover;
         }
 
@@ -99,34 +107,16 @@
         }
 
         .repo-title {
-            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         .repo-desc {
             font-size: 13px;
             color: var(--muted);
-            margin-bottom: 10px;
         }
 
-        .tag {
-            display: inline-block;
-            background: rgba(88,166,255,0.1);
-            color: var(--accent);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: var(--muted);
-            border-top: 1px solid var(--border);
-            margin-top: 40px;
-        }
-
+        /* MODAL */
         .modal {
             position: fixed;
             inset: 0;
@@ -140,86 +130,103 @@
             background: var(--card);
             padding: 20px;
             border-radius: 10px;
-            max-width: 500px;
             width: 90%;
-        }
-
-        .modal img {
-            width: 100%;
-            border-radius: 6px;
-            margin-bottom: 10px;
+            max-width: 500px;
         }
 
         .close {
             float: right;
             cursor: pointer;
         }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--muted);
+        }
     </style>
 </head>
 
 <body>
 
-    <section class="hero">
-        <h1>Hi, I'm Anushka </h1>
-        <p>I turn messy data into meaningful insights using Python & dashboards.</p>
-        <a href="#projects" class="hero-btn">View My Work</a>
-    </section>
-
     <div class="container">
 
-        <h2 id="projects" class="section-title">Projects</h2>
+        <!-- PROFILE -->
+        <div class="sidebar">
+            <img src="https://via.placeholder.com/150" class="avatar">
 
-        <div class="repo-grid">
+            <div class="name">Anushka Tyagi</div>
+            <div class="username">anu-ushka</div>
 
-            <!-- PROJECT 1 -->
-            <div class="repo-card" onclick="openModal(this)"
-                data-title="Road Accidents Analysis"
-                data-img="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80"
-                data-desc="Analyzed accident data to uncover severity patterns and risk factors using Python and EDA."
-                data-link="https://github.com/YOUR_USERNAME/SectionA_Group7_RoadAccidents">
-
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80">
-
-                <div class="repo-content">
-                    <div class="repo-title">Road Accidents Analysis</div>
-                    <div class="repo-desc">Data analysis + EDA insights</div>
-                    <span class="tag">Python</span>
-                </div>
+            <div class="bio">
+                Data Analyst passionate about turning data into insights using Python, dashboards, and ML.
             </div>
 
-            <!-- PROJECT 2 -->
-            <div class="repo-card" onclick="openModal(this)"
-                data-title="Retail Sales Analysis"
-                data-img="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
-                data-desc="Built dashboards and insights for retail sales trends and business decisions."
-                data-link="https://github.com/YOUR_USERNAME/RETAIL_PROJECT">
-
-                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80">
-
-                <div class="repo-content">
-                    <div class="repo-title">Retail Sales Analysis</div>
-                    <div class="repo-desc">Business insights + dashboards</div>
-                    <span class="tag">Data Analytics</span>
-                </div>
+            <div class="links">
+                <a href="mailto:anushkatyagi.2013@gmail.com">Email</a>
+                <a href="https://github.com/anu-ushka" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/anushkaaa-tyagi/" target="_blank">LinkedIn</a>
             </div>
-
-            <!-- PROJECT 3 -->
-            <div class="repo-card" onclick="openModal(this)"
-                data-title="AI Real Estate Advisor"
-                data-img="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80"
-                data-desc="ML model predicting property prices with a Streamlit interface."
-                data-link="https://github.com/YOUR_USERNAME/RealEstateAgent">
-
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80">
-
-                <div class="repo-content">
-                    <div class="repo-title">AI Real Estate Advisor</div>
-                    <div class="repo-desc">ML + Streamlit app</div>
-                    <span class="tag">Machine Learning</span>
-                </div>
-            </div>
-
         </div>
+
+        <!-- PROJECTS -->
+        <div>
+            <div class="section-title">Projects</div>
+
+            <div class="repo-grid">
+
+                <!-- Project 1 -->
+                <div class="repo-card" onclick="openModal(this)"
+                    data-title="Road Accidents Analysis"
+                    data-img="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80"
+                    data-desc="Analyzed accident dataset (14K+ records) to identify severity patterns and risk factors using Python and EDA."
+                    data-link="https://github.com/anu-ushka/SectionA_Group7_RoadAccidents">
+
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80">
+
+                    <div class="repo-content">
+                        <div class="repo-title">Road Accidents Analysis</div>
+                        <div class="repo-desc">Python | EDA | Data Insights</div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="repo-card" onclick="openModal(this)"
+                    data-title="Retail Sales Analysis"
+                    data-img="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+                    data-desc="Performed retail sales analysis and built dashboards to extract business insights and trends."
+                    data-link="#">
+
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80">
+
+                    <div class="repo-content">
+                        <div class="repo-title">Retail Sales Analysis</div>
+                        <div class="repo-desc">Dashboards | Business Insights</div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="repo-card" onclick="openModal(this)"
+                    data-title="AI Real Estate Advisor"
+                    data-img="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80"
+                    data-desc="Built ML model to predict property prices with Streamlit interface and intelligent recommendations."
+                    data-link="https://github.com/anu-ushka/RealEstateAgent">
+
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80">
+
+                    <div class="repo-content">
+                        <div class="repo-title">AI Real Estate Advisor</div>
+                        <div class="repo-desc">ML | Streamlit | Prediction</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            © 2026 Anushka Tyagi
+        </footer>
+
     </div>
 
     <!-- MODAL -->
@@ -227,15 +234,11 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal()">✖</span>
             <h3 id="m-title"></h3>
-            <img id="m-img">
+            <img id="m-img" style="width:100%; margin:10px 0;">
             <p id="m-desc"></p>
             <a id="m-link" target="_blank">View Project →</a>
         </div>
     </div>
-
-    <footer>
-        © 2026 Anushka | Portfolio
-    </footer>
 
     <script>
         const modal = document.getElementById("modal");
