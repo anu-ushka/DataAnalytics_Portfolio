@@ -1,88 +1,259 @@
-<!-- ONLY showing edited parts you MUST change -->
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- TITLE -->
-<title>Anushka | Data Analytics Portfolio</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anushka | Data Analytics Portfolio</title>
 
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --muted: #8b949e;
+            --accent: #58a6ff;
+        }
 
-<!-- NAME + USERNAME -->
-<h1 class="vcard-fullname">Anushka</h1>
-<h2 class="vcard-username">anu-ushka</h2>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
 
-<!-- BIO -->
-<div class="user-profile-bio">
-    Data Analytics enthusiast turning raw data into meaningful insights through dashboards and analysis.
-</div>
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
 
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0d1117, #161b22);
+        }
 
-<!-- CONTACT -->
-<a href="mailto:anushkatyagi.2013@gmail.com" class="btn-profile">Contact Me</a>
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
 
+        .hero p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
 
-<!-- DETAILS -->
-<li>Delhi, India</li>
-<li><a href="mailto:anushkatyagi.2013@gmail.com">anushkatyagi.2013@gmail.com</a></li>
-<li><a href="https://github.com/anu-ushka" target="_blank">github.com/anu-ushka</a></li>
+        .hero-btn {
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
 
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
 
-<!-- SKILLS -->
-<div class="skills-badges">
-    <span class="badge">Python</span>
-    <span class="badge">Tableau</span>
-    <span class="badge">Excel</span>
-    <span class="badge">Pandas</span>
-    <span class="badge">NumPy</span>
-    <span class="badge">Data Visualization</span>
-    <span class="badge">Data Cleaning</span>
-</div>
+        .section-title {
+            font-size: 22px;
+            margin: 40px 0 20px;
+        }
 
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-<!-- PROJECT 1 -->
-<div class="repo-card open-modal-btn" data-category="python"
-data-title="Accident Risk & Severity Analysis Dashboard"
-data-img="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80"
-data-link="YOUR_GITHUB_LINK"
-data-desc="Interactive Tableau dashboard analyzing accident severity patterns across regions, driver profiles, and conditions. Identified high-risk factors and trends.">
+        .repo-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+            cursor: pointer;
+        }
 
-<p class="repo-desc">
-Analyzed accident data to uncover severity patterns, high-risk zones, and driver-related risk factors using Tableau dashboards.
-</p>
+        .repo-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
+        }
 
-<div class="repo-footer">
-<span><span class="lang-color lang-tableau"></span> Tableau</span>
-</div>
-</div>
+        .repo-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
 
+        .repo-content {
+            padding: 15px;
+        }
 
-<!-- PROJECT 2 -->
-<div class="repo-card open-modal-btn" data-category="python"
-data-title="Driver Profile & Incident Risk Analysis"
-data-img="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=800&q=80"
-data-link="YOUR_GITHUB_LINK"
-data-desc="Analyzed how driver demographics such as age, gender, and experience influence accident severity. Built interactive dashboards for insights.">
+        .repo-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
 
-<p class="repo-desc">
-Explored relationship between driver demographics and accident severity to identify key risk indicators.
-</p>
+        .repo-desc {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
 
-<div class="repo-footer">
-<span><span class="lang-color lang-tableau"></span> Tableau</span>
-</div>
-</div>
+        .tag {
+            display: inline-block;
+            background: rgba(88,166,255,0.1);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
 
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
 
-<!-- PROJECT 3 -->
-<div class="repo-card open-modal-btn" data-category="python"
-data-title="Hospital Readmission Analysis"
-data-img="https://images.unsplash.com/photo-1580281657527-47cbe0b5e0bb?auto=format&fit=crop&w=800&q=80"
-data-link="YOUR_GITHUB_LINK"
-data-desc="Analyzed 14K+ healthcare records to identify factors affecting 30-day readmissions and improve patient outcome insights.">
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
 
-<p class="repo-desc">
-Identified key drivers of hospital readmissions using data cleaning, analysis, and visualization techniques.
-</p>
+        .modal-content {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+        }
 
-<div class="repo-footer">
-<span><span class="lang-color lang-excel"></span> Excel</span>
-</div>
-</div>
+        .modal img {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .close {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <h1>Hi, I'm Anushka </h1>
+        <p>I turn messy data into meaningful insights using Python & dashboards.</p>
+        <a href="#projects" class="hero-btn">View My Work</a>
+    </section>
+
+    <div class="container">
+
+        <h2 id="projects" class="section-title">Projects</h2>
+
+        <div class="repo-grid">
+
+            <!-- PROJECT 1 -->
+            <div class="repo-card" onclick="openModal(this)"
+                data-title="Road Accidents Analysis"
+                data-img="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80"
+                data-desc="Analyzed accident data to uncover severity patterns and risk factors using Python and EDA."
+                data-link="https://github.com/YOUR_USERNAME/SectionA_Group7_RoadAccidents">
+
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80">
+
+                <div class="repo-content">
+                    <div class="repo-title">Road Accidents Analysis</div>
+                    <div class="repo-desc">Data analysis + EDA insights</div>
+                    <span class="tag">Python</span>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="repo-card" onclick="openModal(this)"
+                data-title="Retail Sales Analysis"
+                data-img="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+                data-desc="Built dashboards and insights for retail sales trends and business decisions."
+                data-link="https://github.com/YOUR_USERNAME/RETAIL_PROJECT">
+
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80">
+
+                <div class="repo-content">
+                    <div class="repo-title">Retail Sales Analysis</div>
+                    <div class="repo-desc">Business insights + dashboards</div>
+                    <span class="tag">Data Analytics</span>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="repo-card" onclick="openModal(this)"
+                data-title="AI Real Estate Advisor"
+                data-img="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80"
+                data-desc="ML model predicting property prices with a Streamlit interface."
+                data-link="https://github.com/YOUR_USERNAME/RealEstateAgent">
+
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80">
+
+                <div class="repo-content">
+                    <div class="repo-title">AI Real Estate Advisor</div>
+                    <div class="repo-desc">ML + Streamlit app</div>
+                    <span class="tag">Machine Learning</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">✖</span>
+            <h3 id="m-title"></h3>
+            <img id="m-img">
+            <p id="m-desc"></p>
+            <a id="m-link" target="_blank">View Project →</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Anushka | Portfolio
+    </footer>
+
+    <script>
+        const modal = document.getElementById("modal");
+
+        function openModal(el) {
+            document.getElementById("m-title").innerText = el.dataset.title;
+            document.getElementById("m-img").src = el.dataset.img;
+            document.getElementById("m-desc").innerText = el.dataset.desc;
+            document.getElementById("m-link").href = el.dataset.link;
+
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
