@@ -6,107 +6,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anushka Tyagi (anu-ushka)</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg: #0d1117;
-            --card: #161b22;
-            --border: #30363d;
-            --text: #c9d1d9;
-            --muted: #8b949e;
-            --blue: #58a6ff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            --bg: #0b0f19;
+            --card: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #e6edf3;
+            --muted: #9aa4b2;
+            --accent: #4f8cff;
+            --gradient: linear-gradient(135deg, #4f8cff, #8a63ff);
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
             margin: 0;
-            background: var(--bg);
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top, #111827, #020617);
             color: var(--text);
         }
 
-        a { color: var(--blue); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
         header {
-            padding: 16px;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
-            background: #010409;
+        }
+
+        header h1 {
+            font-size: 18px;
             font-weight: 600;
         }
 
-        .container {
-            display: flex;
-            max-width: 1200px;
-            margin: auto;
-            padding: 24px;
-            gap: 24px;
-        }
-
-        .sidebar {
-            width: 260px;
+        .hero {
+            text-align: center;
+            padding: 60px 20px 30px;
         }
 
         .avatar {
-            width: 200px;
+            width: 120px;
             border-radius: 50%;
-            border: 1px solid var(--border);
-            margin-bottom: 12px;
+            border: 3px solid transparent;
+            background: var(--gradient);
+            padding: 3px;
         }
 
-        .btn {
-            display: block;
-            padding: 8px;
-            margin-top: 10px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            text-align: center;
-            background: #21262d;
+        .hero h2 {
+            margin: 16px 0 6px;
+            font-size: 28px;
         }
 
-        .btn:hover { background: #30363d; }
+        .hero p.role {
+            color: var(--accent);
+            font-weight: 500;
+        }
 
-        .grid {
-            flex: 1;
+        .hero p.desc {
+            max-width: 500px;
+            margin: 10px auto;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .links {
+            margin-top: 15px;
+        }
+
+        .links a {
+            margin: 0 8px;
+            padding: 8px 14px;
+            border-radius: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .links a:hover {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .projects {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .card {
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: 16px;
             overflow: hidden;
-            cursor: pointer;
+            transition: 0.3s ease;
+            backdrop-filter: blur(12px);
+        }
+
+        .card:hover {
+            transform: translateY(-6px) scale(1.01);
+            border-color: var(--accent);
         }
 
         .card img {
             width: 100%;
-            height: 150px;
+            height: 170px;
             object-fit: cover;
-            display: block;
         }
 
-        .content {
-            padding: 12px;
+        .card-content {
+            padding: 16px;
         }
 
         .title {
             font-weight: 600;
-            color: var(--blue);
+            color: var(--accent);
+            margin-bottom: 6px;
         }
 
         .desc {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--muted);
-            margin-top: 6px;
         }
 
         footer {
             text-align: center;
             padding: 30px;
-            border-top: 1px solid var(--border);
             color: var(--muted);
-            margin-top: 20px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -114,67 +150,54 @@
 <body>
 
 <header>
-    anu-ushka Portfolio
+    <h1>anu-ushka Portfolio</h1>
 </header>
 
-<div class="container">
+<section class="hero">
+    <img class="avatar" src="https://i.ibb.co/N6wFxmQJ/anushka-2.png" alt="profile">
+    <h2>Anushka Tyagi</h2>
+    <p class="role">Data Analyst</p>
+    <p class="desc">Turning raw datasets into meaningful insights & dashboards.</p>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-
-        <img class="avatar"
-            src="https://i.ibb.co/N6wFxmQJ/anushka-2.png"
-            alt="profile">
-
-        <h2>Anushka Tyagi</h2>
-        <p style="color: var(--muted)">Data Analyst</p>
-
-        <p style="margin-top:10px; font-size:13px;">
-            Turning raw datasets into meaningful insights & dashboards.
-        </p>
-
-        <a class="btn" href="mailto:anushkatyagi.2013@gmail.com">Email</a>
-        <a class="btn" href="https://github.com/anu-ushka" target="_blank">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/anushkaaa-tyagi/" target="_blank">LinkedIn</a>
-
+    <div class="links">
+        <a href="mailto:anushkatyagi.2013@gmail.com">Email</a>
+        <a href="https://github.com/anu-ushka" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/anushkaaa-tyagi/" target="_blank">LinkedIn</a>
     </div>
+</section>
 
-    <!-- PROJECTS -->
-    <div class="grid">
+<section class="projects">
 
-        <!-- ROAD ACCIDENTS -->
-        <a class="card" href="https://github.com/Suhaani-19/SectionA_Group7_RoadAccidents" target="_blank">
-            <img src="https://i.ibb.co/VYGkgGDY/db2.jpg" alt="road accidents">
-            <div class="content">
-                <div class="title">Road Accidents Analysis</div>
-                <div class="desc">EDA on 12K+ accident records to find severity patterns & risk factors.</div>
-            </div>
-        </a>
+    <a class="card" href="https://github.com/Suhaani-19/SectionA_Group7_RoadAccidents" target="_blank">
+        <img src="https://i.ibb.co/VYGkgGDY/db2.jpg" alt="road accidents">
+        <div class="card-content">
+            <div class="title">Road Accidents Analysis</div>
+            <div class="desc">EDA on 12K+ accident records to find severity patterns & risk factors.</div>
+        </div>
+    </a>
 
-        <!-- AMAZON -->
-        <a class="card" href="https://github.com/anu-ushka/amazon-review-fraud-detection" target="_blank">
-            <img src="https://i.ibb.co/QvBbjrSX/Screenshot-2026-04-28-at-11-31-18-PM.png" alt="amazon">
-            <div class="content">
-                <div class="title">Amazon Review Fraud Detection</div>
-                <div class="desc">Detected suspicious review behavior using data analysis techniques.</div>
-            </div>
-        </a>
+    <a class="card" href="https://github.com/anu-ushka/amazon-review-fraud-detection" target="_blank">
+        <img src="https://i.ibb.co/QvBbjrSX/Screenshot-2026-04-28-at-11-31-18-PM.png" alt="amazon">
+        <div class="card-content">
+            <div class="title">Amazon Review Fraud Detection</div>
+            <div class="desc">Detected suspicious review behavior using data analysis techniques.</div>
+        </div>
+    </a>
 
-        <!-- HOSPITAL -->
-        <a class="card" href="https://github.com/mitul-bhatia/SectionA_Group-16_optimize-hospital-readmission" target="_blank">
-            <img src="https://i.ibb.co/NgQvSQ8v/Screenshot-2026-04-28-at-11-54-27-PM.png" alt="hospital">
-            <div class="content">
-                <div class="title">Hospital Readmission Analysis</div>
-                <div class="desc">Identified 30-day readmission drivers with ~$20M impact analysis.</div>
-            </div>
-        </a>
+    <a class="card" href="https://github.com/mitul-bhatia/SectionA_Group-16_optimize-hospital-readmission" target="_blank">
+        <img src="https://i.ibb.co/NgQvSQ8v/Screenshot-2026-04-28-at-11-54-27-PM.png" alt="hospital">
+        <div class="card-content">
+            <div class="title">Hospital Readmission Analysis</div>
+            <div class="desc">Identified 30-day readmission drivers with ~$20M impact analysis.</div>
+        </div>
+    </a>
 
-    </div>
-</div>
+</section>
 
 <footer>
     © 2026 Anushka Tyagi | anu-ushka
 </footer>
 
 </body>
+
 </html>
